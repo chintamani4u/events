@@ -10,6 +10,17 @@
     var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
     var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
     var cors       = require('cors');
+    var cookieParser = require('cookie-parser');
+    var session = require('express-session');
+    var passport = require('passport');
+    var router = express.Router();
+    var authenticate = require('./app/autheticate')(passport);
+    var initPassport = require('./passport-init');  //// Initialize Passport
+    initPassport(passport);
+
+
+
+
 
     // configuration ===============================================================
     mongoose.connect(database.url);     // connect to mongoDB database
@@ -18,15 +29,20 @@
     app.use(morgan('dev'));
     app.use(cors());                                       // log every request to the console
     app.use(bodyParser.urlencoded({extended:true}));            // parse application/x-www-form-urlencoded
-    app.use(bodyParser.json());                                     // parse application/json
+    app.use(bodyParser.json());
+    app.use(cookieParser());                                   // parse application/json
     //app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
     //app.use(methodOverride());
+    app.use(passport.initialize());
+    app.use(passport.session());
 
 
-    var router = express.Router();
     // routes ======================================================================
     require('./app/routes.js')(router);
     app.use('/api', router)
+    app.use('/auth', authenticate);
+
+
 
     // listen (start app with node server.js) ======================================
     app.listen(port);
