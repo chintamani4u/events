@@ -11,7 +11,11 @@ module.exports = function(router) {
       //  next(); // make sure we go to the next routes and don't stop here
   //  });
 
-
+  // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
+  router.route('/')
+    .get(function(req, res) {
+  	res.json({ message: 'Welcome to Events api!' });
+  });
 
     // on routes that end in /events
     // ----------------------------------------------------
@@ -43,7 +47,7 @@ module.exports = function(router) {
 
         // get all the events (accessed at GET http://localhost:8080/api/events)
         .get(function(req, res) {
-            Event.find(function(err, events) {
+            Event.find().sort({ _id: -1 }).exec(function(err, events) {
                 if (err)
                     res.send(err);
 
@@ -109,6 +113,5 @@ module.exports = function(router) {
                 res.json({ message: 'Event Successfully deleted' });
             });
         });
-
 
 }
