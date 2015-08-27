@@ -6,6 +6,7 @@ var Event   = new Schema({
 		youtube_video_link : String,
 		image : String,
 		description : String,
+		likes : Number,
 		starts : Date,
 		ends : Date,
 		location : String,
