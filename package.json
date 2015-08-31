@@ -1,12 +1,12 @@
 {
   "name": "Events",
-  "version": "0.0.0",
-  "description": "Events application WIP",
-  "main": "server.js",
-  "author": "Chintamani Umarani",
+  "version": "0.0.1",
   "engines": {
     "npm": "2.1.1"
   },
+  "description": "Events application WIP",
+  "main": "server.js",
+  "author": "Chintamani Umarani",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.5.2",
