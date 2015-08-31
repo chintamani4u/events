@@ -4,6 +4,9 @@
   "description": "Events application WIP",
   "main": "server.js",
   "author": "Chintamani Umarani",
+  "engines": {
+    "npm": "2.1.x"
+  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.5.2",
