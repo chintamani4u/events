@@ -1,0 +1,28 @@
+ <div class="row-fluid wide fundcontainer">
+
+            <div class="span16">
+                <div id="container" class="row-fluid">
+                    <form method="post"  enctype="multipart/form-data" name="form" ng-submit="form.$valid && signup()">
+
+                        <h3>Create a account</span></h3> <!--PUBLIC INFORMATION / SHOWN TO EVERYBODY-->
+
+                        <div class="control-group">
+                            <label>Username</label>
+                            <div class="control"><input  type="text" ng-model="user.username" required></div>
+                        </div>
+                        <div class="control-group">
+                            <label>Password</label>
+                            <div class="control"><input  type="password" ng-model="user.password" required></div>
+                        </div>
+                        <div class="control-group ">
+                            <div class="control">
+                                <input class="btn btn-large" type="submit" value="Signup" >
+                            </div>
+                        </div>
+                       
+                    </form>
+                </div>
+
+<div class="push"></div>    
+            
+</div>
