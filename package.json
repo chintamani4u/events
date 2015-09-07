@@ -1,6 +1,9 @@
 {
   "name": "Events",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "engines": {
+    "npm": "2.1.1"
+  },
   "description": "Events application WIP",
   "main": "server.js",
   "author": "Chintamani Umarani",
